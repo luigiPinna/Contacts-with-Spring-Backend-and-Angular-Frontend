@@ -1,19 +1,19 @@
-package com.example.contact.service;
+package com.rubrica.contact.service;
 
-import com.example.contact.model.Contact;
+import com.rubrica.contact.dao.ContactDAO;
+import com.rubrica.contact.model.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import com.example.contact.dao.ContactRepositoryDAO;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
 public class ContactService {
-    ContactRepositoryDAO contactDAO;
+    ContactDAO contactDAO;
 
     @Autowired
-    public ContactService(@Qualifier("dbContactDAO") ContactRepositoryDAO contactDAO) {
+    public ContactService( ContactDAO contactDAO) {
         this.contactDAO = contactDAO;
     }
 

@@ -1,4 +1,4 @@
-package com.example.contact.model;
+package com.rubrica.contact.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Contact {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -64,5 +65,3 @@ public class Contact {
         this.company = company;
     }
 }
-
-

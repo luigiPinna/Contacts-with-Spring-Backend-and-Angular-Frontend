@@ -1,12 +1,13 @@
-package com.example.contact.controller;
+package com.rubrica.contact.controller;
 
-import com.example.contact.model.Contact;
+
+import com.rubrica.contact.model.Contact;
+import com.rubrica.contact.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.contact.service.ContactService;
 
 @RestController
-@RequestMapping("/contacts")
+@RequestMapping("/contact")
 public class ContactController {
     public ContactService contactService;
 
@@ -29,5 +30,10 @@ public class ContactController {
     @GetMapping("/")
     public Iterable<Contact> getAll(){
         return contactService.getAllContacts();
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteContact(@PathVariable("id")int id){
+        return contactService.deleteContact(id);
     }
 }
