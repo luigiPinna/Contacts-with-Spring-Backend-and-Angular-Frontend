@@ -13,7 +13,7 @@ public class ContactService {
     ContactDAO contactDAO;
 
     @Autowired
-    public ContactService( ContactDAO contactDAO) {
+    public ContactService(@Qualifier("dbContactDAO") ContactDAO contactDAO) {
         this.contactDAO = contactDAO;
     }
 

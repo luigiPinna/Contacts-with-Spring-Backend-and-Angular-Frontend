@@ -6,6 +6,7 @@ import com.rubrica.contact.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/contact")
 public class ContactController {
@@ -32,8 +33,15 @@ public class ContactController {
         return contactService.getAllContacts();
     }
 
+    @PutMapping("/{id}")
+    public String updateContact(@PathVariable("id") int id, @RequestBody Contact contact){
+        return contactService.updateContact(id, contact);
+    }
+
     @DeleteMapping("/{id}")
     public String deleteContact(@PathVariable("id")int id){
         return contactService.deleteContact(id);
     }
+
+
 }
