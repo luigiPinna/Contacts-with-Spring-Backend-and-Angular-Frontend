@@ -1,0 +1,30 @@
+<div class="container p-5">
+  <h1 class="text-center mb-5">
+    Contacts
+  </h1>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Company</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="pointer" *ngFor="let entry of contactsData ; let i = index">
+        <th scope="row"> {{i + 1}}</th>
+        <td>{{entry.firstName}}</td>
+        <td>{{entry.lastName}}</td>
+        <td>{{entry.phone}}</td>
+        <td>{{entry.company}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--
+<app-loading-screen *ngIf="!moviesDataLoader" ></app-loading-screen>
+-->

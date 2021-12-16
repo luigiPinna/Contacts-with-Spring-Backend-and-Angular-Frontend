@@ -1,6 +1,6 @@
 export interface ContactData{
   id:number;
-  firstname:string;
+  firstName:string;
   lastName:string;
   phone:string;
   email:string;
