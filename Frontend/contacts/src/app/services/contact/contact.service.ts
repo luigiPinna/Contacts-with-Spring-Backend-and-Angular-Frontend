@@ -7,14 +7,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactService {
 
-  baseURL = 'http://localhost:8080/contact/'
+  baseURL = 'http://localhost:8080/contact'
 
   constructor(private http : HttpClient) { }
 
   //CRUD operations
   //Get
   getAllContacts () {
-    return this.http.get<Array<ContactData>>(this.baseURL)
+    return this.http.get<Array<ContactData>>(this.baseURL+ "/")
   }
   //Get
   getContact(id : number) {

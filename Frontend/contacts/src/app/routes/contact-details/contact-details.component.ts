@@ -12,19 +12,21 @@ export class ContactDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private contactService : ContactService) { }
 
-  id : number;
-  contact : ContactData;
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.getSingleContact();
   }
 
+  id : number;
+  contact : ContactData;
+
   getSingleContact(){
     this.contactService.getContact(this.id).subscribe((response : any) =>{
       this.contact = response;
-    }),
-    console.log("Utente trovato: ", this.contact)
+      console.log("Utente trovato: ", response)
+    })
+
   }
 
 }
