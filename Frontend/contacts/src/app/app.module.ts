@@ -10,13 +10,17 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactsDashboardComponent } from './routes/contacts-dashboard/contacts-dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddContactComponent } from './routes/add-contact/add-contact.component';
+import { ContactDetailsComponent } from './routes/contact-details/contact-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ContactsDashboardComponent
+    ContactsDashboardComponent,
+    AddContactComponent,
+    ContactDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -23,7 +23,7 @@ export class ContactService {
   //Post
   addContact = (data: ContactData) => {
     return this.http.post<ContactData>(this.baseURL, {
-      "firstname":data.firstName,
+      "firstName":data.firstName,
       "lastName":data.lastName,
       "phone":data.phone,
       "email":data.email,
@@ -34,7 +34,7 @@ export class ContactService {
   editContact = (data: ContactData) => {
     return this.http.put(this.baseURL + '/' + data.id, {
       "id": data.id,
-      "firstname":data.firstName,
+      "firstName":data.firstName,
       "lastName":data.lastName,
       "phone":data.phone,
       "email":data.email,

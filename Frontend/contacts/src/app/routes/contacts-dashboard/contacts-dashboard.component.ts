@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ContactsDashboardComponent implements OnInit {
 
-  public contactsData : ContactData[] = [];
+  public contactsData : ContactData[];
   constructor(private contactsService : ContactService, private router : Router) { }
 
 
@@ -24,6 +24,11 @@ export class ContactsDashboardComponent implements OnInit {
       this.contactsData = response;
       console.log("Contacts data: ",this.contactsData)
     })
+    return this.contactsData;
+  }
+
+  goToDetails(id : number){
+    this.router.navigateByUrl('/contact-details/'+id);
   }
 
 }

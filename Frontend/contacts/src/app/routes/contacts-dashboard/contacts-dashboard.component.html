@@ -1,25 +1,27 @@
-<div class="container p-5">
-  <h1 class="text-center mb-5">
-    Contacts
-  </h1>
+<div class="w-100 push-bottom">
+  <div class="text-right bg-light">
+
+
+  <!--
+    <button class="btn btn-primary mb-3" [routerLink]='["/filterdouble"]'>Filter Double</button>
+    <button class="btn btn-primary mb-3" [routerLink]='["/sortingbydeath"]'>Sort by death</button>
+   -->
+
+  </div>
 
   <table class="table">
-    <thead class="thead-dark">
+    <thead class="thead-light">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Surname</th>
-        <th scope="col">Phone</th>
-        <th scope="col">Company</th>
+        <th scope="col">Id</th>
+        <th scope="col">Contact</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="pointer" *ngFor="let entry of contactsData ; let i = index">
+      <tr class="pointer" *ngFor="let entry of contactsData ; let i = index" (click)="goToDetails(entry.id)">
         <th scope="row"> {{i + 1}}</th>
-        <td>{{entry.firstName}}</td>
-        <td>{{entry.lastName}}</td>
-        <td>{{entry.phone}}</td>
-        <td>{{entry.company}}</td>
+        <td>{{entry.id}}</td>
+        <td>{{entry.firstName}} {{entry.lastName}} <br><br> {{entry.phone}} <br>{{entry.company}}</td>
       </tr>
     </tbody>
   </table>
