@@ -1,74 +1,32 @@
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- Container wrapper -->
-  <div class="container-fluid">
-    <!-- Toggle button -->
-    <button
-      class="navbar-toggler"
+
+  <button class="navbar-toggler"
       type="button"
       data-mdb-toggle="collapse"
-      data-mdb-target="#navbarCenteredExample"
-      aria-controls="navbarCenteredExample"
-      aria-expanded="false"
+      data-mdb-target="#navbarLeftAlignExample"
+      aria-controls="navbarLeftAlignExample"
+      aria-expanded="true"
       aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
+        (click)="toggleNavbar()">
+
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <a class="navbar-brand mb-lg-0 justify-content-center align-items-center" href="#">
+    Contact List
+  </a>
+  <button type="button"  class="btn btn-default color brand" aria-label="Right Align" [routerLink]='["/add-contact"]'>
+    <span class="fas fas fa-plus"></span>
     </button>
 
-    <!-- Collapsible wrapper -->
-    <div
-      class="collapse navbar-collapse justify-content-center"
-      id="navbarCenteredExample"
-    >
-      <!-- Left links -->
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-
-          <!-- Avatar -->
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle d-flex align-items-center"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).jpg"
-            class="rounded-circle"
-            height="22"
-            alt="Portrait of a Woman"
-            loading="lazy"
-          />
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li>
-            <a class="dropdown-item" href="#">My profile</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Settings</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Logout</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <button type="button"  class="btn btn-default" aria-label="Right Align" [routerLink]='["/add-contact"]'>
-          <span class="fas fa-user-plus"></span>
-          </button>
+  <div class="collapse navbar-collapse"
+       [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="#" [routerLink]='["/dashboard"]'>Home</a>
       </li>
 
-      </ul>
-
-      <!-- Left links -->
-    </div>
-    <!-- Collapsible wrapper -->
+    </ul>
   </div>
-  <!-- Container wrapper -->
 </nav>

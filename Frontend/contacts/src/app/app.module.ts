@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddContactComponent } from './routes/add-contact/add-contact.component';
 import { ContactDetailsComponent } from './routes/contact-details/contact-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

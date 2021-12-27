@@ -16,6 +16,8 @@ public class Contact {
     private String phone;
     private String email;
     private String company;
+    private String imgURL;
+
 
     public int getId() {
         return id;
@@ -63,5 +65,13 @@ public class Contact {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
     }
 }

@@ -7,16 +7,20 @@ body {
 }
 
 .container {
-    height: 100vh
+    height: auto;
+    padding-top:1px;
+
 }
 
 .card {
+    margin-top: 50px;
+    margin-bottom: 60px;
     width: 380px;
     border: none;
     border-radius: 15px;
     padding: 8px;
     background-color: #fff;
-    box-shadow: 20px 20px 60px #3ca076, -20px -20px 60px #52cfd8;
+    box-shadow: 20px 20px 40px #3ca076, -20px -20px 40px #52cfd8;
     position: relative;
     height: 370px
 }

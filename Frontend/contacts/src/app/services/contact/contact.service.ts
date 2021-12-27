@@ -22,12 +22,13 @@ export class ContactService {
   }
   //Post
   addContact = (data: ContactData) => {
-    return this.http.post<ContactData>(this.baseURL, {
+    return this.http.post<ContactData>(this.baseURL + "/", {
       "firstName":data.firstName,
       "lastName":data.lastName,
       "phone":data.phone,
       "email":data.email,
-      "company":data.company
+      "company":data.company,
+      "imgURL":data.imgURL,
     });
   };
   //Put
@@ -38,7 +39,8 @@ export class ContactService {
       "lastName":data.lastName,
       "phone":data.phone,
       "email":data.email,
-      "company":data.company
+      "company":data.company,
+      "imgURL":data.imgURL,
     });
   };
   //Delete

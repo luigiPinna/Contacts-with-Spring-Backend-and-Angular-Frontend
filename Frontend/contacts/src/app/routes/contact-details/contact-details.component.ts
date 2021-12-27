@@ -1,7 +1,7 @@
 import { ContactService } from './../../services/contact/contact.service';
 import { ContactData } from './../../models/contact';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-details',
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ContactDetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private contactService : ContactService) { }
+  constructor(private route: ActivatedRoute, private contactService : ContactService, private router : Router) { }
 
 
   ngOnInit(): void {
@@ -26,7 +26,16 @@ export class ContactDetailsComponent implements OnInit {
       this.contact = response;
       console.log("Utente trovato: ", response)
     })
+  }
 
+  deleteContact(){
+    this.contactService.deleteContact(this.id).subscribe(
+      (data) => {
+      this.router.navigate(['/dashboard']);
+    }, (err) => {
+      console.log(err);
+      this.router.navigate(['/dashboard']);
+    });
   }
 
 }
