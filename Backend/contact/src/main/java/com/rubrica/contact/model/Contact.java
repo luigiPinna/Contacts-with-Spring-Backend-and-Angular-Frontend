@@ -18,7 +18,6 @@ public class Contact {
     private String company;
     private String imgURL;
 
-
     public int getId() {
         return id;
     }

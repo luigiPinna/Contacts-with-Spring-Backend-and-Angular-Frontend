@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { ContactService } from './../../services/contact/contact.service';
 import { ContactData } from './../../models/contact';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ContactDetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private contactService : ContactService, private router : Router) { }
+  constructor(private route: ActivatedRoute, private contactService : ContactService, private router : Router, private http: HttpClient) { }
 
 
   ngOnInit(): void {
@@ -20,6 +21,7 @@ export class ContactDetailsComponent implements OnInit {
 
   id : number;
   contact : ContactData;
+  urlLink:string = "assets/profilePictures/1.jpg"
 
   getSingleContact(){
     this.contactService.getContact(this.id).subscribe((response : any) =>{
@@ -37,5 +39,19 @@ export class ContactDetailsComponent implements OnInit {
       this.router.navigate(['/dashboard']);
     });
   }
+
+  selectFile(event){
+    if(event.target.files){
+      var reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload = (event:any)=>{
+        this.urlLink = event.target.result;
+        console.log(this.urlLink);
+      }
+    }
+  }
+
+
+
 
 }

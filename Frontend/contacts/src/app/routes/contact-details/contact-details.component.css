@@ -9,7 +9,12 @@ body {
 .container {
     height: auto;
     padding-top:1px;
-
+}
+.upload{
+  height: auto;
+  padding-top:1px;
+  font-size: smaller;
+  margin: 1%;
 }
 
 .card {

@@ -18,11 +18,6 @@ public class ContactController {
     }
 
     //CRUD operations (Create Read Upload Delete)
-    @PostMapping("/")
-    public String addContact(@RequestBody Contact contact){
-        return contactService.addContact(contact);
-    }
-
     @GetMapping("/{id}")
     public Contact getContactById(@PathVariable("id") int id){
         return contactService.getContact(id);
@@ -31,6 +26,11 @@ public class ContactController {
     @GetMapping("/")
     public Iterable<Contact> getAll(){
         return contactService.getAllContacts();
+    }
+
+    @PostMapping("/")
+    public String addContact(@RequestBody Contact contact){
+        return contactService.addContact(contact);
     }
 
     @PutMapping("/{id}")

@@ -1,0 +1,30 @@
+  <table class="table bg-light">
+
+    <tbody>
+      <tr class="pointer" *ngFor="let entry of notes ; let i = index" (click)="goToDetails(entry.id)">
+        <th scope="row"> {{i + 1}}</th>
+        <td>{{entry.date | date}}</td>
+        <td>{{entry.note}}</td>
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">
+            <td>{{entry.date | date}}
+
+            </td>
+
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title">Dark card title</h5>
+            <p class="card-text">{{entry.note}}
+            </p>
+
+          </div>
+          <button type="button"  style="font-size: 15px" class="btn btn-default bg-light" [routerLink]='["/add-note"]'>
+            <span class="fas fa-plus" aria-hidden="true"></span>
+          </button>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+
+

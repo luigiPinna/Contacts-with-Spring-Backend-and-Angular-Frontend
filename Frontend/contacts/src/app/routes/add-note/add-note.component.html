@@ -1,0 +1,19 @@
+<div class="bg-light">
+  <div class="container pl-5 pr-5 pb-5">
+
+    <form class="pt-2" (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <div class="form-group row">
+            <label for="cast" class="col-sm-2 col-form-label">New note</label>
+            <div class="col-sm-10">
+                <textarea type="text" class="form-control" id="note" required ngModel name="note">
+
+                </textarea>
+            </div>
+        </div>
+
+        <button class="btn btn-primary mr-3" [routerLink]="['/dashboard']">Back</button>
+        <button type="submit" [disabled]="!form.valid" class="btn btn-success">Submit</button>
+
+    </form>
+  </div>
+</div>

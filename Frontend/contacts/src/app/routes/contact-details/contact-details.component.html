@@ -1,14 +1,15 @@
 <div class="bg-light">
   <div class="container d-flex justify-content-center">
     <div class="card">
-        <div class="upper"> <img src="https://i.imgur.com/Qtrsrk5.jpg" class="img-fluid"> </div>
-        <div class="user text-center">
+
+        <div class="user text-center mt-5 mb-2">
             <div class="profile"> <img src="{{contact.imgURL}}" class="rounded-circle" width="80"> </div>
         </div>
-        <div class="mt-5 text-center">
-            <h4 class="mb-0">{{contact.firstName}}</h4> <span class="text-muted d-block mb-2">{{contact.firstName}}</span>
 
-            <button class="btn btn-primary btn-sm follow">Edit</button>
+        <div class="mt-5 text-center ">
+            <h4 class="mb-2">{{contact.firstName}} {{contact.lastName}}</h4> <span class="text-muted d-block mb-2">{{contact.company}}</span>
+
+            <button class="btn btn-primary btn-sm follow" [routerLink]="['/upload-contact/'+contact.id]">Edit</button>
             <button class="btn btn-danger ml-2 btn-sm follow" (click)='deleteContact()'>Delete</button>
             <div class="d-flex justify-content-between align-items-center mt-4 px-4">
                 <div class="stats">
@@ -21,6 +22,13 @@
                     <h6 class="mb-0">City</h6> <span>Los Angeles</span>
                 </div>
             </div>
+
+             <!-- Implementazione file    -->
+              <div class="upload mt-3">
+
+                <input type="file" class="btn btn-light btn-sm" id="formFile" accept="image/*" (change)="selectFile($event)">
+              </div>
+
         </div>
     </div>
 

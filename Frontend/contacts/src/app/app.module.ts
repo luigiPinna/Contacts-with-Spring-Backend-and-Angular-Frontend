@@ -12,6 +12,9 @@ import { ContactsDashboardComponent } from './routes/contacts-dashboard/contacts
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddContactComponent } from './routes/add-contact/add-contact.component';
 import { ContactDetailsComponent } from './routes/contact-details/contact-details.component';
+import { UploadContactComponent } from './routes/upload-contact/upload-contact.component';
+import { AgendaComponent } from './routes/agenda/agenda.component';
+import { AddNoteComponent } from './routes/add-note/add-note.component';
 
 
 @NgModule({
@@ -22,6 +25,9 @@ import { ContactDetailsComponent } from './routes/contact-details/contact-detail
     ContactsDashboardComponent,
     AddContactComponent,
     ContactDetailsComponent,
+    UploadContactComponent,
+    AgendaComponent,
+    AddNoteComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-black">
 
   <button class="navbar-toggler"
       type="button"
@@ -12,10 +12,11 @@
 
     <span class="navbar-toggler-icon"></span>
   </button>
-
+<h3>
   <a class="navbar-brand mb-lg-0 justify-content-center align-items-center" href="#">
-    Contact List
+    Contacts
   </a>
+</h3>
   <button type="button"  class="btn btn-default color brand" aria-label="Right Align" [routerLink]='["/add-contact"]'>
     <span class="fas fas fa-plus"></span>
     </button>
@@ -23,8 +24,11 @@
   <div class="collapse navbar-collapse"
        [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav mb-2 mb-lg-0">
-      <li class="nav-item">
+      <li class="nav-item d-flex justify-content-center">
         <a class="nav-link" href="#" [routerLink]='["/dashboard"]'>Home</a>
+      </li>
+      <li class="nav-item d-flex justify-content-center">
+        <a class="nav-link" href="#" [routerLink]='["agenda-dashboard"]'>Agenda</a>
       </li>
 
     </ul>

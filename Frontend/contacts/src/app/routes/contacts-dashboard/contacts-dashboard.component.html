@@ -1,34 +1,26 @@
-<div class="w-100 push-bottom">
-  <div class="text-right bg-light">
+<div class="bg-light pt-3 pb-3">
+  <div class="w-100">
+    <div class="text-right">
 
+    <!--
+      <button class="btn btn-primary mb-3" [routerLink]='["/filterdouble"]'>Filter Double</button>
+      <button class="btn btn-primary mb-3" [routerLink]='["/sortingbydeath"]'>Sort by death</button>
+    -->
 
-  <!--
-    <button class="btn btn-primary mb-3" [routerLink]='["/filterdouble"]'>Filter Double</button>
-    <button class="btn btn-primary mb-3" [routerLink]='["/sortingbydeath"]'>Sort by death</button>
-   -->
+    </div>
 
+    <table class="table">
+      <tbody>
+        <tr class="pointer" *ngFor="let entry of contactsData ; let i = index" (click)="goToDetails(entry.id)">
+
+          <td>{{entry.id}}</td>
+          <td> <img src="{{entry.imgURL}}" class="rounded-circle" width="70"></td>
+          <td>{{entry.firstName}} {{entry.lastName}} <br><br> {{entry.phone}} <br>{{entry.company}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Id</th>
-        <th scope="col">Image</th>
-        <th scope="col">Contact</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="pointer" *ngFor="let entry of contactsData ; let i = index" (click)="goToDetails(entry.id)">
-        <th scope="row"> {{i + 1}}</th>
-        <td>{{entry.id}}</td>
-        <td> <img src="{{entry.imgURL}}" class="rounded-circle" width="70"></td>
-        <td>{{entry.firstName}} {{entry.lastName}} <br><br> {{entry.phone}} <br>{{entry.company}}</td>
-      </tr>
-    </tbody>
-  </table>
 </div>
-
 <!--
 <app-loading-screen *ngIf="!moviesDataLoader" ></app-loading-screen>
 -->

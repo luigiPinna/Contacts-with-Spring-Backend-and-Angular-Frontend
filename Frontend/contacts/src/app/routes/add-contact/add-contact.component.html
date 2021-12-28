@@ -1,50 +1,45 @@
-<div class="container p-5">
-  <div class="row">
-      <button class="btn btn-primary mr-5" [routerLink]="['/dashboard']">Back</button>
-      <h5 class="text-center">New Contact</h5>
+<div class="bg-light">
+  <div class="container pl-5 pr-5 pb-5">
+    <form class="pt-2" (ngSubmit)="onSubmit(form)" #form="ngForm">
+
+        <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="firstName" required ngModel name="firstName">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="cast" class="col-sm-2 col-form-label">Surname</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="lastName" required ngModel name="lastName">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="director" class="col-sm-2 col-form-label">Phone Number</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="phone" required ngModel name="phone">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="continent" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="email" required ngModel name="email">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="rated" class="col-sm-2 col-form-label">Company</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="company" required ngModel name="company">
+            </div>
+        </div>
+        <button class="btn btn-primary mr-3" [routerLink]="['/dashboard']">Back</button>
+        <button type="submit" [disabled]="!form.valid" class="btn btn-success">Submit</button>
+
+
+    </form>
   </div>
-
-
-
-  <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm">
-
-      <div class="form-group row">
-          <label for="name" class="col-sm-2 col-form-label">Name</label>
-          <div class="col-sm-10">
-              <input type="text" class="form-control" id="firstName" required ngModel name="firstName">
-          </div>
-      </div>
-
-      <div class="form-group row">
-          <label for="cast" class="col-sm-2 col-form-label">Surname</label>
-          <div class="col-sm-10">
-              <input type="text" class="form-control" id="lastName" required ngModel name="lastName">
-          </div>
-      </div>
-
-      <div class="form-group row">
-          <label for="director" class="col-sm-2 col-form-label">Phone Number</label>
-          <div class="col-sm-10">
-              <input type="text" class="form-control" id="phone" required ngModel name="phone">
-          </div>
-      </div>
-
-      <div class="form-group row">
-          <label for="continent" class="col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="email" required ngModel name="email">
-          </div>
-      </div>
-
-      <div class="form-group row">
-          <label for="rated" class="col-sm-2 col-form-label">Company</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="company" required ngModel name="company">
-          </div>
-      </div>
-
-
-      <button type="submit" [disabled]="!form.valid" class="btn btn-success">Submit</button>
-
-  </form>
 </div>
