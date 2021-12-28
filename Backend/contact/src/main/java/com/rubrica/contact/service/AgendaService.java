@@ -5,6 +5,7 @@ import com.rubrica.contact.model.Agenda;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.Optional;
 
@@ -52,6 +53,7 @@ public class AgendaService {
     }
 
     //DELETE
+    @CrossOrigin(origins = "*")
     public String deleteNote(int id){
         Agenda result = agendaDAO.findById(id).orElse(null);
         if(result == null){

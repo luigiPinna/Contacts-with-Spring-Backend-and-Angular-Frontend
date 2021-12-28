@@ -21,21 +21,22 @@ export class AgendaService {
     return this.http.get<AgendaData>(this.baseURL + "/" + id)
   }
   //Post
-  addNote = (data: AgendaData) => {
+  addNote = (note: AgendaData) => {
     return this.http.post<AgendaData>(this.baseURL + "/", {
-      "date":data.date,
-      "note":data.note
+      "date":note.date,
+      "note":note.note
     });
   };
   //Put
-  editNote = (data: AgendaData) => {
-    return this.http.put(this.baseURL + '/' + data.id, {
-      "date":data.date,
-      "note":data.note
+  editNote = (note: AgendaData) => {
+    return this.http.put(this.baseURL + '/' + note.id, {
+      "date":note.date,
+      "note":note.note
     });
   };
   //Delete
   deleteNote(id : number){
     return this.http.delete(this.baseURL + "/" + id)
   }
+
 }
