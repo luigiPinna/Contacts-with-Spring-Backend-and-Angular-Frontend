@@ -26,7 +26,7 @@ export class AddContactComponent implements OnInit {
   //Invia i dati al backend per aggiungere il contatto
   onSubmit(form : NgForm){
     this.newContact = form.form.value;
-    this.newContact.imgURL = "../assets/luigi.png";
+    this.newContact.imgURL = "../assets/profilePictures/1.png";
     console.log(this.newContact);
 
     this.contactService.addContact(this.newContact).subscribe(

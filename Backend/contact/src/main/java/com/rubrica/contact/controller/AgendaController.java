@@ -38,13 +38,13 @@ public class AgendaController {
 
     //PUT
     @PutMapping("/{id}")
-    public String updateContact(@PathVariable("id") int id, @RequestBody Agenda agenda){
+    public String updateContact(@PathVariable("id")int id, @RequestBody Agenda agenda){
         return agendaService.updateNote(id, agenda);
     }
 
     //DELETE
     @DeleteMapping("/{id}")
-    public String updateNote(@PathVariable("id") int id){
+    public String updateNote(@PathVariable("id")int id){
         return agendaService.deleteNote(id);
     }
 }

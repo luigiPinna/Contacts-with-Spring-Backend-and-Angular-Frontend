@@ -2,7 +2,7 @@
 
   <h2 class="text-center pb-3 pt-2">{{dateResults.date_time_txt}}</h2>
   <div class="card-group center">
-      <div class=" card-deck pointer m-1" *ngFor="let entry of notes ; let i = index">
+      <div class=" card-deck pointer m-1" *ngFor="let entry of notes ; let i = index" (click)="goToDetails(entry.id)">
 
         <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
           <div class="card-header">
@@ -19,7 +19,7 @@
               <button type="button"  style="font-size: 15px" class="btn btn-default bg-light" [routerLink]='["/add-note"]'>
                 <span class="fas fa-plus" aria-hidden="true"></span>
               </button>
-              <button type="button"  style="font-size: 15px" class="btn btn-danger" (click)="deleteNoteById(entry.id)">
+              <button type="button"  style="font-size: 15px" class="btn btn-danger" (click)="deleteNoteById(entry.id)" (click)="reloadPage()" >
                 <span class="fas fa-minus" aria-hidden="true"></span>
               </button>
           </div>

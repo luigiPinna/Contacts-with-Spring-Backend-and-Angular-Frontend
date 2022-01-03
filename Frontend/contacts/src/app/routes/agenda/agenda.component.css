@@ -6,6 +6,9 @@
   height: 100%;
   flex-wrap: wrap;
 }
+.card{
+  min-width: 200px;
+}
 /* media esempio
 @media(max-width: 900px){
 

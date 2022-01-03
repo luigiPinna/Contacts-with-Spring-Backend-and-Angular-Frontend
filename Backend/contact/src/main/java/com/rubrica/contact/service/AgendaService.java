@@ -59,6 +59,7 @@ public class AgendaService {
         if(result == null){
             return "Note not found";
         }else{
+            agendaDAO.deleteById(id);
             return "Note delected";
         }
     }
